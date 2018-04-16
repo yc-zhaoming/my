@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.JButton;
@@ -24,7 +25,7 @@ public class MainClass implements ActionListener{
 	JLabel jl1=new JLabel("");
 	Date date=new Date();
 	myThread mt;
-	static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	public void getFrame(){
 		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		jf.setLayout(null);
@@ -32,9 +33,9 @@ public class MainClass implements ActionListener{
 		jf.add(jl);
 		jf.add(jl1);
 		jl.setBounds(20, 200, 300, 100);
-		jl.setFont(new Font("微软雅黑", 1, 24));
+		jl.setFont(new Font("微软雅黑", 1, 14));
 		jl1.setBounds(20, 250, 300, 100);
-		jl1.setFont(new Font("微软雅黑", 1, 24));
+		jl1.setFont(new Font("微软雅黑", 1, 14));
 		jf.setSize(400, 400);
 		jb.setBounds(50, 50, 300, 50);
 		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -45,28 +46,66 @@ public class MainClass implements ActionListener{
 		mt.start();
 	}
 	public static String getShengYuTime(Date d){
-		long min=0;
+		long minx=0;
 		long second=0;
 		try {
-			Date now=new Date();
+			Calendar now = Calendar.getInstance();
+			System.out.println("年："+(now.get(Calendar.YEAR)));
+			System.out.println("月："+(now.get(Calendar.MONTH)+1));
+            System.out.println("日："+now.get(Calendar.DAY_OF_MONTH));
+            System.out.println("时："+now.get(Calendar.HOUR_OF_DAY));
+            int year = now.get(Calendar.YEAR);
+            int  month = now.get(Calendar.MONTH)+1;
+			int day = now.get(Calendar.DAY_OF_MONTH);
+			int hour = now.get(Calendar.HOUR_OF_DAY);
+			int min = now.get(Calendar.MINUTE);
+			int sec = now.get(Calendar.SECOND);
+           String yeart = String.valueOf(year);
+            String montht;
+            String dayt;
+            String hourt;
+            String mint;
+            String sect;
+           if(month <10){
+               montht = "0"+String.valueOf(month);
+           }
+           else {
+                montht = String.valueOf(month);
+           }
+           if(day <10){
+             dayt = "0" + String.valueOf(day);
+           }
+           else {
+                dayt = String.valueOf(day);
+           }
+           if (hour<12){
+               hourt = "12";
+               mint = "00";
+               sect = "00";
 
-			Date date=sdf.parse("2018-04-14 12:00:00");
+           }
+           else {
+                hourt = "17";
+               mint = "30";
+                sect = "00";
+           }
+            Date date=sdf.parse(yeart+"-"+montht+"-"+dayt+" "+hourt+":"+mint+":"+sect);
+            System.out.println("日期1："+sdf.format(now.getTime()));
+            System.out.println("日期1："+sdf.format(date));
 			long tst=date.getTime()-d.getTime();
-			System.out.println("sss"+date.getTime());
-			System.out.println("sss1"+d.getTime());
-			min=tst/(60*1000);
+			minx=tst/(60*1000);
 			second=(tst%(60*1000))/1000;
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(min==0&&second==0){
+		if(minx==0&&second==0){
 			
 			JOptionPane.showMessageDialog(null, "下班");
 			return "";
 		}
 		else
-		return "距离下班时间："+min+"分"+second+"秒";
+		return "距离下班时间："+minx+"分"+second+"秒";
 	}
 	public static void main(String[] args) {
 		int testNum=-1;
@@ -140,6 +179,7 @@ class myThread extends Thread{
 				date=new Date();
 				label.setText("现在时间是："+sdf.format(date));
 				label1.setText(MainClass.getShengYuTime(date));
+				i++;
 				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
