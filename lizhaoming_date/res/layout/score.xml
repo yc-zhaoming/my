@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation = "vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+  
+<TextView android:text="非常感谢您的使用，给个评价吧O(∩_∩)O~" 
+android:id="@+id/score_text"
+ android:layout_width="fill_parent" 
+ android:layout_height="wrap_content">
+ </TextView>  
+  
+<RatingBar android:id="@+id/rating_bar" 
+android:layout_width="fill_parent" 
+android:layout_height="wrap_content">
+</RatingBar>
+
+</LinearLayout>

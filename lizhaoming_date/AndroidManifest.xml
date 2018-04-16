@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.donglihan.CollegeLifeManager"
+      android:versionCode="14"
+      android:versionName="1.0">
+
+    <application 
+        android:icon="@drawable/app" 
+        android:label="@string/app_name" 
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.myHelper.course.MainActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	<activity android:name="com.myHelper.course.course_activity"></activity>
+	<activity android:name="com.myHelper.course.travel_activity"></activity>
+	<activity android:name="com.myHelper.course.help_activity"></activity>
+	<activity android:name="com.myHelper.course.score_activity"></activity> 
+	<activity android:name="com.myHelper.course.course_new_activity"></activity> 
+	<activity android:name="com.myHelper.course.course_set_activity"></activity> 
+	<activity android:name="com.myHelper.course.diary_activity"></activity> 
+	<activity android:name="com.myHelper.course.DiaryEditActivity"></activity> 
+	<activity android:name="com.myHelper.course.diary_login_activity"></activity> 
+	<activity android:name="com.myHelper.sch_activity.CalendarActivity"></activity> 
+	<activity android:name="com.myHelper.sch_activity.ScheduleView" android:label="@string/app_name"/>
+    <activity android:name="com.myHelper.sch_activity.ScheduleTypeView" android:label="@string/app_name"/>
+    <activity android:name="com.myHelper.sch_activity.ScheduleInfoView" ></activity>
+    <activity android:name="com.myHelper.sch_activity.ScheduleAll" ></activity>
+    <activity android:name="com.myHelper.sch_activity.CalendarConvert" android:label="@string/app_name"/>
+    <activity android:name="com.myHelper.myAlarmManager.AlarmAlert"/>
+	<service android:name="com.myHelper.service.SaveService" >
+            <intent-filter>
+                <action android:name="com.myHelper.service" />
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </service>
+	<service android:name="com.myHelper.service.MusicService"></service>
+	<receiver android:name="com.myHelper.myAlarmManager.AlarmReceiver">
+	    <intent-filter>
+	        <action android:name="aa"/>
+	    </intent-filter>
+	</receiver>
+    </application>
+  
+
+</manifest> 

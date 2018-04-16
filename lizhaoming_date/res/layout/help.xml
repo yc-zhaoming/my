@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation = "vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+<LinearLayout
+  android:orientation = "vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:background = "#000000">
+  
+<TextView android:text="名称:我的日程助手" 
+android:id="@+id/help_text"
+ android:layout_width="fill_parent" 
+ android:layout_height="wrap_content">
+ </TextView>
+
+<TextView android:text="版权:保留一切权利!" 
+android:id="@+id/help_text"
+ android:layout_width="fill_parent" 
+ android:layout_height="wrap_content">
+ </TextView>
+
+<TextView android:text="作者:李昭明" 
+android:id="@+id/help_text"
+ android:layout_width="fill_parent" 
+ android:layout_height="wrap_content">
+ </TextView>
+ 
+<TextView android:text="桂林电子科技大学" 
+android:id="@+id/help_text"
+ android:layout_width="fill_parent" 
+ android:layout_height="wrap_content">
+ </TextView> 
+ 
+ 
+<TextView android:text="E-mail:806501711@qq.com" 
+android:id="@+id/help_text"
+ android:layout_width="wrap_content" 
+ android:layout_height="wrap_content"
+ android:autoLink = "all"
+ android:textSize = "30sp">
+ </TextView> 
+</LinearLayout>
+</ScrollView>

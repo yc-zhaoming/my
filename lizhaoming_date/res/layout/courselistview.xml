@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/mybackgroung">
+
+    <com.myHelper.borderText.BorderTextView
+        android:id="@+id/upweek"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/top_day"
+        android:gravity="center"
+        android:text="上一周"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/mylv"
+        android:layout_width="wrap_content"
+        android:layout_height="372dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/upweek"
+        android:background="@drawable/schedule_bk" />
+
+    <com.myHelper.borderText.BorderTextView
+        android:id="@+id/nextweek"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/mylv"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/top_day"
+        android:gravity="center"
+        android:text="下一周"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <com.myHelper.borderText.BorderTextView
+        android:id="@+id/upday"
+        android:layout_width="146dp"
+        android:layout_height="37dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/mylv"
+        android:background="@drawable/top_day"
+        android:gravity="center"
+        android:text="上一天"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <com.myHelper.borderText.BorderTextView
+        android:id="@+id/nextday"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/upday"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/top_day"
+        android:gravity="center"
+        android:text="下一天"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <com.myHelper.borderText.BorderTextView
+        android:id="@+id/setting_course"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/top_day"
+        android:layout_below="@+id/nextday"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="设置课表" />
+
+</RelativeLayout>

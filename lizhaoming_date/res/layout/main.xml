@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   android:background = "@drawable/mybackgroung">
+
+<Button
+    android:id="@+id/btn_course"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/mydate"
+    android:layout_marginLeft="57dp"
+    android:layout_marginTop="78dp"
+    android:layout_toLeftOf="@+id/mydate"
+    android:background="@null"
+    android:drawableTop="@drawable/my_kebiao"
+    android:text="我的课表" />
+
+<Button
+    android:id="@+id/mydate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="44dp"
+    android:background="@null"
+    android:drawableTop="@drawable/my_rili"
+    android:text="我的日程" />
+
+<Button
+    android:id="@+id/btn_diary"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBaseline="@+id/btn_course"
+    android:layout_alignBottom="@+id/btn_course"
+    android:layout_marginLeft="16dp"
+    android:layout_toRightOf="@+id/mydate"
+    android:background="@null"
+    android:drawableTop="@drawable/my_jishiben"
+    android:text="私密日记" />
+
+</RelativeLayout>
